@@ -1,6 +1,6 @@
 ## This is my version of the Schulte Table, in which there is nothing superfluous.
 
-Made it with Unity.
+Made with Unity.
 ***
 <img src="gameplay.gif" width="216" height="468"/>
 
