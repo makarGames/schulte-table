@@ -3,8 +3,7 @@ using UnityEngine.UI;
 
 public class Number : MonoBehaviour
 {
-    [SerializeField]
-    private Text textNumber;
+    [SerializeField] private Text textNumber;
 
     private int _number;
     public int number

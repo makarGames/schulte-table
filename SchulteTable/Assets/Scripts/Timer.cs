@@ -4,10 +4,9 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public static Timer S;
-    private Text textTimer;
-
     public bool startTimer;
 
+    private Text textTimer;
     private float _timer;
     private float timer
     {
@@ -24,12 +23,10 @@ public class Timer : MonoBehaviour
 
     private void Awake()
     {
-        textTimer = GetComponent<Text>();
-    }
-    private void Start()
-    {
         if (S == null)
             S = this;
+
+        textTimer = GetComponent<Text>();
         startTimer = false;
     }
 
@@ -50,6 +47,6 @@ public class Timer : MonoBehaviour
     public void StopTimer()
     {
         startTimer = false;
-        ScoreManager.S.StopCounter(timer);
+        ScoreManager.S.StopRound(timer);
     }
 }

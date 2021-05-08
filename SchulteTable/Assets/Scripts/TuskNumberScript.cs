@@ -4,10 +4,10 @@ using UnityEngine.UI;
 public class TuskNumberScript : MonoBehaviour
 {
     public static TuskNumberScript S;
-    Text textNumber;
 
     [SerializeField] private int _counter;
 
+    private Text textNumber;
     private int counter
     {
         get
@@ -23,13 +23,9 @@ public class TuskNumberScript : MonoBehaviour
 
     private void Awake()
     {
-        textNumber = GetComponent<Text>();
-    }
-
-    private void Start()
-    {
         if (S == null)
             S = this;
+        textNumber = GetComponent<Text>();
     }
 
     public void StartRound()

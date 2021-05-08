@@ -6,7 +6,6 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager S;
 
     [SerializeField] private Text bestTime;
-    [SerializeField] private Text avgTime;
 
     private int _playCounter;
     private int playCounter
@@ -22,7 +21,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    static private float _bestTimeValue;
+    private float _bestTimeValue;
     private float bestTimeValue
     {
         get
@@ -37,39 +36,20 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    static private float _avgTimeValue;
-    private float avgTimeValue
-    {
-        get
-        {
-            return _avgTimeValue;
-        }
-        set
-        {
-            _avgTimeValue = value;
-            PlayerPrefs.SetFloat("AvgTime", _avgTimeValue);
-            avgTime.text = "AVG\n" + _avgTimeValue.ToString("0.00");
-        }
-    }
-
     private void Awake()
     {
         if (S == null)
             S = this;
-    }
 
-    private void Start()
-    {
         bestTimeValue = PlayerPrefs.GetFloat("BestTime", 0);
-        avgTimeValue = PlayerPrefs.GetFloat("AvgTime", 0);
-        playCounter = PlayerPrefs.GetInt("PlayCounter", 0);
+        playCounter = PlayerPrefs.GetInt("PlayCounter", 1);
     }
 
-    public void StopCounter(float time)
+    public void StopRound(float time)
     {
-        if (time < bestTimeValue || bestTimeValue == 0) bestTimeValue = time;
+        if (time < bestTimeValue || bestTimeValue == 0)
+            bestTimeValue = time;
 
-        avgTimeValue = (avgTimeValue * playCounter + time) / (playCounter + 1);
         playCounter++;
     }
 }
