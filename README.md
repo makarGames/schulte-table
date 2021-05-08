@@ -1,4 +1,4 @@
-##This is my version of the Schulte Table, in which there is nothing superfluous.
+## This is my version of the Schulte Table, in which there is nothing superfluous.
 
 Made it with Unity.
 ***
